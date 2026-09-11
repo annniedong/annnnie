@@ -1,12 +1,3 @@
-// The hero (name typed over a static golden spiral, "view my work" prompt)
-// sits at the top of a normally-scrolling page — scrolling down into #work
-// works immediately, even mid-type, no gating.
-//
-// Scrolling UP past the top is the one special case: instead of doing
-// nothing (rubber-banding), it dollies the spiral in toward its pole,
-// revealing a nautilus shell — an Easter egg above the fold. Scrolling back
-// down zooms back out and hands control back to normal page scroll.
-
 import { GoldenSpiral } from './spiral.js';
 import { typeInto } from './typewriter.js';
 
@@ -26,7 +17,7 @@ const shellEl = document.getElementById('shell');
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const spiral = new GoldenSpiral(worldEl, rectGroup, arcGroup, shellEl);
 
-const ENGAGE_THRESHOLD = 0.6;   // how much upward scroll it takes to "break" out of resting on the name
+const ENGAGE_THRESHOLD = 0.5;   // how much upward scroll it takes to "break" out of resting on the name
 
 let zoomCur = 0, zoomTgt = 0, raf = null;
 let locked = false;   // page scroll pinned at 0 while a zoom is in progress
