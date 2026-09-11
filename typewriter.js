@@ -1,6 +1,4 @@
-// Minimal typewriter effect: types `text` character-by-character into
-// `el`'s .typed-text span, then marks its caret .done. Returns a promise
-// that resolves once typing finishes.
+// typewriter effect
 
 export function typeInto(lineEl, text, { speed = 70, startDelay = 0 } = {}) {
   const textEl = lineEl.querySelector('.typed-text');
