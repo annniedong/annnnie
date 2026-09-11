@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Annie Dong</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/spiral.css">
+</head>
+<body>
+
+  <!-- ===== Header: name types out over a static golden spiral, with a
+       "view my work" prompt visible from the start. Scrolling down here is
+       just normal page scroll (not gated on typing finishing); scrolling UP
+       past the top instead zooms in on the spiral toward the nautilus shell
+       at its pole — see js/main.js. ===== -->
+  <header class="hero">
+    <svg class="spiral-svg" aria-hidden="true"><g id="world"><g id="gr"></g><g id="ga"></g></g></svg>
+    <img id="shell" alt="" src="assets/shell.webp">
+    <div id="hero-copy" class="hero-copy">
+      <!-- fades out as the zoom engages — the name (below) does not -->
+      <div id="hints" class="hints">
+        <button id="life-hint" class="scroll-hint scroll-hint--up" type="button" aria-label="Scroll up to view my life">
+          <svg class="chevron chevron-up" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 15l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="scroll-hint-label">view my life</span>
+        </button>
+        <button id="scroll-hint" class="scroll-hint scroll-hint--down" type="button" aria-label="Scroll to view my work">
+          <span class="scroll-hint-label">view my work</span>
+          <svg class="chevron chevron-down" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <h1 id="typed-name" class="typed-line name-line"><span class="typed-text"></span><span class="caret" aria-hidden="true"></span></h1>
+    </div>
+  </header>
+
+  <!-- ===== Standard scrollable site ===== -->
+  <main id="work" class="work-section">
+
+    <div class="work-intro">
+      <p class="work-greeting">hello world, i'm annie</p>
+      <p>a 3rd year computer science student at Barnard College.</p>
+      <p>i enjoy talking to people and creating things.</p>
+      <p>i am obsessed with ai, music, people.</p>
+    </div>
+
+    <section class="work-block" aria-labelledby="experience-title">
+      <h2 id="experience-title" class="work-block-title">experience</h2>
+
+      <article class="entry">
+        <h3 class="entry-title">FinDash.ai</h3>
+        <p class="entry-meta">Software Engineer, Part-time</p>
+        <p>A financial dashboard platform.</p>
+      </article>
+
+      <article class="entry">
+        <h3 class="entry-title">ColumbiaDailySpectator.com</h3>
+        <p class="entry-meta">Engineering Team — Sept. 2024–Present</p>
+        <p>Managed the website last semester; this semester, managing the mobile app on iOS and Android.</p>
+      </article>
+    </section>
+
+    <section class="work-block" aria-labelledby="building-title">
+      <h2 id="building-title" class="work-block-title">building</h2>
+
+      <article class="entry">
+        <h3 class="entry-title">3D Career Paths Map</h3>
+        <p class="entry-meta">with Candogram</p>
+        <ul>
+          <li>Built an interactive 3D web app mapping NYC job postings to explorable career paths with ML vector embeddings.</li>
+          <li>Directed student survey research and scored cross-level job similarity to auto-generate career-path connections.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h3 class="entry-title">Livecode.NYC</h3>
+        <p class="entry-meta">Community, Columbia University</p>
+        <p>I code music and visuals :) Hosted algoraves (improvisational sound &amp; visual performance) and taught a workshop introducing algorithmic code as an artistic tool.</p>
+      </article>
+    </section>
+
+    <section class="work-block" aria-labelledby="research-title">
+      <h2 id="research-title" class="work-block-title">research</h2>
+
+      <article class="entry">
+        <h3 class="entry-title">Bit-by-Bit: Reliance on AI-Assisted Creative Workflows in Constrained Audio and Visual Domains</h3>
+        <p class="entry-meta">Columbia University, NY · Conducting user studies · Ongoing</p>
+        <ul>
+          <li>Designing a controlled study identifying thresholds where authorship, agency, and novelty are impacted in a custom interface.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h3 class="entry-title">AuPPLE: Augmented Physical Priors through Language Enhancement using Self-Supervised Learning</h3>
+        <p class="entry-meta">First Author · Jeju, Korea · Published, IEEE Xplore — 13th ICTC 2023 · Oct. 2023</p>
+        <ul>
+          <li>Led a team of 6 students to demonstrate that LLMs can develop intuitive understanding of physical dynamics by fine-tuning on physics datasets; scripted custom benchmark datasets.</li>
+          <li>Achieved over 87% accuracy with the FLAN-T5-large model in predicting object behavior in the physical world.</li>
+          <li>Presented at the International Conference on Information &amp; Communication Technology Convergence — <a href="https://doi.org/10.1109/ICTC58733.2023.10392629">10.1109/ICTC58733.2023.10392629</a></li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="work-block" aria-labelledby="projects-title">
+      <h2 id="projects-title" class="work-block-title">projects</h2>
+
+      <article class="entry">
+        <h3 class="entry-title">iAssist</h3>
+        <p>A computer vision assistant for the visually impaired using YOLOv11 real-time object detection, Kokoro-82M text-to-speech output, and Llama 3.2. Presented at the Anote 2025 AI Day Summit.</p>
+        <p class="entry-meta">DevPost · GitHub</p>
+      </article>
+    </section>
+
+    <section class="work-block" aria-labelledby="cds-title">
+      <h2 id="cds-title" class="work-block-title">cds special editions</h2>
+
+      <article class="entry">
+        <h3 class="entry-title">Mississippi Makes Women Count</h3>
+      </article>
+    </section>
+
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

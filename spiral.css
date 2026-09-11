@@ -1,0 +1,19 @@
+.spiral-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#gr rect { fill: none; stroke: #E10600; stroke-width: 1; }
+#ga path { fill: none; stroke: #0A0A0A; stroke-width: 1.7; }
+
+/* the nautilus shell, hidden until scrolling up zooms in on the pole */
+#shell {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+  transform-origin: 65.27% 63.88%;
+  will-change: transform, opacity;
+}
