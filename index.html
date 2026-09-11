@@ -4,6 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <title>Annie Dong</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
@@ -23,10 +28,10 @@
             <path d="M6 15l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2"
                   stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          <span class="scroll-hint-label">view my life</span>
+          <span class="scroll-hint-label">see my life</span>
         </button>
         <button id="scroll-hint" class="scroll-hint scroll-hint--down" type="button" aria-label="Scroll to view my work">
-          <span class="scroll-hint-label">view my work</span>
+          <span class="scroll-hint-label">see my work</span>
           <svg class="chevron chevron-down" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"
                   stroke-linecap="round" stroke-linejoin="round"/>
@@ -41,44 +46,41 @@
   <main id="work" class="work-section">
 
     <div class="work-intro">
-      <p class="work-greeting">hello world, i'm annie</p>
-      <p>a 3rd year computer science student at Barnard College.</p>
-      <p>i enjoy talking to people and creating things.</p>
-      <p>i am obsessed with ai, music, people.</p>
+      <p class="work-greeting">hello world, I'm Annie</p>
+      <p>a 3rd year computer science student at Barnard College of Columbia University.</p>
+      <p>and I am obsessed with connecting things.</p>
     </div>
 
     <section class="work-block" aria-labelledby="experience-title">
-      <h2 id="experience-title" class="work-block-title">experience</h2>
+      <h2 id="experience-title" class="work-block-title">currently...</h2>
 
       <article class="entry">
-        <h3 class="entry-title">FinDash.ai</h3>
-        <p class="entry-meta">Software Engineer, Part-time</p>
-        <p>A financial dashboard platform.</p>
+        <p class="entry-meta">software engineer @</p>
+        <h3 class="entry-title"><a class="entry-title-link entry-title-link--findash" href="https://findash.ai" target="_blank" rel="noopener">FinDash.ai</a></h3>
+        <p>i'm working part-time on a financial dashboard for advisory firms, an AI-powered tool that supports planning, CRM, workflows, and client collaboration.</p>
+         
       </article>
 
       <article class="entry">
-        <h3 class="entry-title">ColumbiaDailySpectator.com</h3>
-        <p class="entry-meta">Engineering Team — Sept. 2024–Present</p>
-        <p>Managed the website last semester; this semester, managing the mobile app on iOS and Android.</p>
+        <p class="entry-meta">engineering manager @</p>
+        <h3 class="entry-title"><a class="entry-title-link entry-title-link--spectator" href="https://www.columbiadailyspectator.com" target="_blank" rel="noopener">Columbia Daily Spectator</a></h3>
+        <p>i've worked on the engineering team for my university’s student-run newspaper since september 2024. last semester i managed the website; this semester i am managing the mobile app (<a class="entry-title-link entry-title-link--spectator" href="https://apps.apple.com/us/app/columbia-spectator/id6470171397" target="_blank" rel="noopener">ios</a> and <a class="entry-title-link entry-title-link--spectator" href="https://play.google.com/store/apps/details?id=columbiaspectator.specmobileapp&hl=en_US" target="_blank" rel="noopener">android</a>).</p>
       </article>
     </section>
 
     <section class="work-block" aria-labelledby="building-title">
-      <h2 id="building-title" class="work-block-title">building</h2>
+      <h2 id="building-title" class="work-block-title">building...</h2>
 
       <article class="entry">
-        <h3 class="entry-title">3D Career Paths Map</h3>
-        <p class="entry-meta">with Candogram</p>
-        <ul>
-          <li>Built an interactive 3D web app mapping NYC job postings to explorable career paths with ML vector embeddings.</li>
-          <li>Directed student survey research and scored cross-level job similarity to auto-generate career-path connections.</li>
-        </ul>
+        <p class="entry-meta">an interactive web app</p>
+        <h3 class="entry-title">3D Career Paths Map with <a class="entry-title-link entry-title-link--candogram" href="https://www.candogram.com/about-us/" target="_blank" rel="noopener">Candogram</a></h3>
+        <p>this explorable career path tool transforms NYC job postings into ML vector embeddings. we are surveying students and developing an intuitive visualizer.</p>
       </article>
 
       <article class="entry">
-        <h3 class="entry-title">Livecode.NYC</h3>
-        <p class="entry-meta">Community, Columbia University</p>
-        <p>I code music and visuals :) Hosted algoraves (improvisational sound &amp; visual performance) and taught a workshop introducing algorithmic code as an artistic tool.</p>
+        <p class="entry-meta">a community for improvisational code performance</p>
+        <h3 class="entry-title"><a class="entry-title-link entry-title-link--livecode" href="https://livecode.nyc/" target="_blank" rel="noopener">Livecode.NYC</a> at Columbia University</h3>
+        <p>coding music and visuals is one of my many creative outlets: i've hosted sets (called <a class="entry-title-link entry-title-link--livecode" href="https://www.youtube.com/watch?v=kp7wJpH4J5M" target="_blank" rel="noopener">algoraves</a>) and taught a <a class="entry-title-link entry-title-link--livecode" href="https://www.eventbrite.com/e/maxpylang-workshop-tickets-1990522347926?aff=ebdsoporgprofile" target="_blank" rel="noopener">workshop</a> that introduces algorithmic code as an artistic tool.</p>
       </article>
     </section>
 
@@ -86,21 +88,16 @@
       <h2 id="research-title" class="work-block-title">research</h2>
 
       <article class="entry">
+        <p class="entry-meta">ongoing research @ <a class="entry-title-link entry-title-link--forg" href="https://www.cs.columbia.edu/~ms6147/#about" target="_blank" rel="noopener">Formal Methods and Reasoning Group</a> (FoRG)</p>
         <h3 class="entry-title">Bit-by-Bit: Reliance on AI-Assisted Creative Workflows in Constrained Audio and Visual Domains</h3>
-        <p class="entry-meta">Columbia University, NY · Conducting user studies · Ongoing</p>
-        <ul>
-          <li>Designing a controlled study identifying thresholds where authorship, agency, and novelty are impacted in a custom interface.</li>
-        </ul>
+        <p>conducting a controlled study identifying thresholds where authorship, agency, and novelty are impacted in a custom interface.
+        </p>
       </article>
 
       <article class="entry">
-        <h3 class="entry-title">AuPPLE: Augmented Physical Priors through Language Enhancement using Self-Supervised Learning</h3>
-        <p class="entry-meta">First Author · Jeju, Korea · Published, IEEE Xplore — 13th ICTC 2023 · Oct. 2023</p>
-        <ul>
-          <li>Led a team of 6 students to demonstrate that LLMs can develop intuitive understanding of physical dynamics by fine-tuning on physics datasets; scripted custom benchmark datasets.</li>
-          <li>Achieved over 87% accuracy with the FLAN-T5-large model in predicting object behavior in the physical world.</li>
-          <li>Presented at the International Conference on Information &amp; Communication Technology Convergence — <a href="https://doi.org/10.1109/ICTC58733.2023.10392629">10.1109/ICTC58733.2023.10392629</a></li>
-        </ul>
+        <p class="entry-meta">published to IEEE Xplore @ <a class="entry-title-link" href="https://2023.ictc.org/" target="_blank" rel="noopener">14th International Conference on Information and Communication Technology Convergence (ICTC 2023)</a></p>
+        <h3 class="entry-title"><a class="entry-title-link" href="https://doi.org/10.1109/ICTC58733.2023.10392629" target="_blank" rel="noopener">AuPPLE: Augmented Physical Priors through Language Enhancement using Self-Supervised Learning</a></h3>
+        <p>demonstrated that LLMs can develop understanding of physical dynamics by fine-tuning on custom datasets.
       </article>
     </section>
 
@@ -108,17 +105,21 @@
       <h2 id="projects-title" class="work-block-title">projects</h2>
 
       <article class="entry">
-        <h3 class="entry-title">iAssist</h3>
-        <p>A computer vision assistant for the visually impaired using YOLOv11 real-time object detection, Kokoro-82M text-to-speech output, and Llama 3.2. Presented at the Anote 2025 AI Day Summit.</p>
-        <p class="entry-meta">DevPost · GitHub</p>
+        <p class="entry-meta"><a class="entry-title-link entry-title-link--devfest" href="https://devpost.com/software/iassist-qcnmbp" target="_blank" rel="noopener">hackathon winner</a> @ <a class="entry-title-link entry-title-link--devfest" href="https://devfestcu.netlify.app/" target="_blank" rel="noopener">DevFest 2025</a></p>
+        <h3 class="entry-title"><a class="entry-title-link entry-title-link--devfest" href="https://iassist-tau.vercel.app/" target="_blank" rel="noopener">iAssist</a></h3>
+        <p>built a computer vision assistant for the visually impaired to navigate the physical world. we presented our web app at the <a class="entry-title-link entry-title-link--anote" href="https://anote.ai/launch" target="_blank" rel="noopener">Anote 2025 AI Day Summit</a>.</p>
       </article>
-    </section>
-
-    <section class="work-block" aria-labelledby="cds-title">
-      <h2 id="cds-title" class="work-block-title">cds special editions</h2>
+      
+      <article class="entry">
+        <p class="entry-meta">special editions @ Columbia Daily Spectator</p>
+        <h3 class="entry-title"><a class="entry-title-link entry-title-link--scope" href="https://scope-preprofessional-pressure.columbiaspectator.com/" target="_blank" rel="noopener">SCOPE</a> <a class="entry-title-link entry-title-link--lgbtq" href="https://lgbtq2025.columbiaspectator.com/" target="_blank" rel="noopener">LGBTQ</a> <a class="entry-title-link entry-title-link--commencement" href="https://commencement2025.columbiaspectator.com/" target="_blank" rel="noopener">Commencement</a></h3>
+        <p>developing since 2025</p>
+      </article>
 
       <article class="entry">
-        <h3 class="entry-title">Mississippi Makes Women Count</h3>
+        <p class="entry-meta">data visualization website @ <a class="entry-title-link entry-title-link--erc" href="https://barnard.edu/empirical-reasoning-center" target="_blank" rel="noopener">Empirical Reasoning Center (ERC)</a></p>
+        <h3 class="entry-title">Make Women Count</h3>
+        <p>developed for Mississippi Low-Income Child Care research</p>
       </article>
     </section>
 

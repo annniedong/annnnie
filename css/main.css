@@ -155,16 +155,43 @@ body.zoom-locked { overflow: hidden; height: 100%; cursor: ns-resize; touch-acti
 
 .entry-title {
   font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  font-size: 1.15rem;
-  font-weight: 500;
+  font-size: 1.6rem;
+  font-weight: 300;
   line-height: 1.35;
-  margin: 0 0 .25rem;
+  margin: 0 0 .5rem;
 }
 .entry-meta {
-  font-size: .8rem;
+  font-size: 1rem;
   color: #888;
-  margin: 0 0 .6rem;
+  margin: 0 0 0rem;
 }
+
+.entry a.entry-title-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #E10600;
+}
+.entry a.entry-title-link:hover {
+  font-style: italic;
+  color: #fff;
+  background-color: #E10600;
+}
+.entry a.entry-title-link--findash:hover { background-color: #26A650; }
+.entry a.entry-title-link--spectator:hover { background-color: #7FB4F0; }
+.entry a.entry-title-link--candogram:hover { background-color: #CB2027; }
+.entry a.entry-title-link--livecode:hover { background-color: #FF0099; }
+.entry a.entry-title-link--forg:hover { background-color: #01167A; }
+.entry a.entry-title-link--devfest:hover { background-color: #484BE6; }
+.entry a.entry-title-link--anote:hover { background-color: #111827; }
+.entry a.entry-title-link--scope:hover,
+.entry a.entry-title-link--lgbtq:hover,
+.entry a.entry-title-link--commencement:hover {
+  color: #000;
+}
+.entry a.entry-title-link--scope:hover { background-color: #9FB9CF; }
+.entry a.entry-title-link--lgbtq:hover { background-color: #DFCAF0; }
+.entry a.entry-title-link--commencement:hover { background-color: #D3F6FF; }
+.entry a.entry-title-link--erc:hover { background-color: #002F6C; }
 .entry p:not(.entry-meta) { margin: 0 0 .6rem; color: #333; }
 .entry p:last-child { margin-bottom: 0; }
 
