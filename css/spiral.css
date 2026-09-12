@@ -17,3 +17,17 @@
   transform-origin: 65.27% 63.88%;
   will-change: transform, opacity;
 }
+
+/* small caption that fades in alongside the shell */
+#shell-caption {
+  position: absolute;
+  opacity: 0;
+  margin: 0;
+  font-size: .7rem;
+  letter-spacing: .04em;
+  color: #666;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  will-change: opacity;
+}

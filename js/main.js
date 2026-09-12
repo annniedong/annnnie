@@ -12,10 +12,12 @@ const workEl = document.getElementById('work');
 const worldEl = document.getElementById('world');
 const rectGroup = document.getElementById('gr');
 const arcGroup = document.getElementById('ga');
+const photoGroup = document.getElementById('gp');
 const shellEl = document.getElementById('shell');
+const shellCaptionEl = document.getElementById('shell-caption');
 
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
-const spiral = new GoldenSpiral(worldEl, rectGroup, arcGroup, shellEl);
+const spiral = new GoldenSpiral(worldEl, rectGroup, arcGroup, shellEl, shellCaptionEl, photoGroup, 'assets/profile.jpeg');
 
 const ENGAGE_THRESHOLD = 0.5;   // how much upward scroll it takes to "break" out of resting on the name
 

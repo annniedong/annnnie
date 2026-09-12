@@ -11,6 +11,7 @@ const EXP = 11;
 const ZOOM = PHI ** EXP;
 const EYE = [0.6527, 0.6388];         // spiral eye inside the shell image
 const RATIO = 395 / 520;
+const PHOTO_STEP = 4;                 // which whirling square holds the profile photo
 
 const ease = t => t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2;
 const f = n => n.toFixed(6);
@@ -22,12 +23,19 @@ export class GoldenSpiral {
    * @param {SVGGElement} rectGroup  <g> to hold the whirling-square rects
    * @param {SVGGElement} arcGroup   <g> to hold the quarter-arc path
    * @param {HTMLImageElement} [shell] the nautilus shell image that fades in when zoomed in
+   * @param {HTMLElement} [caption] small label that fades in alongside the shell
+   * @param {SVGGElement} [photoGroup] <g> to hold the profile-photo square
+   * @param {string} [photoSrc] image source, sized into one whirling square
    */
-  constructor(world, rectGroup, arcGroup, shell) {
+  constructor(world, rectGroup, arcGroup, shell, caption, photoGroup, photoSrc) {
     this.world = world;
     this.rectGroup = rectGroup;
     this.arcGroup = arcGroup;
     this.shell = shell || null;
+    this.caption = caption || null;
+    this.photoGroup = photoGroup || null;
+    this.photoSrc = photoSrc || null;
+    this.photoNode = null;
     this.nodes = [];
     this.pole = [0, 0];
     this.base = 0; this.ax = 0; this.ay = 0;   // set by resize()
@@ -59,6 +67,21 @@ export class GoldenSpiral {
       // sweep straight from the numbers; the flip inverts the sign of the cross product
       const sw = (a[0] - c[0]) * (b[1] - c[1]) - (a[1] - c[1]) * (b[0] - c[0]) < 0 ? 1 : 0;
       emit('path', { d: `M ${f(a[0])} ${f(Y(a[1]))} A ${f(s)} ${f(s)} 0 0 ${sw} ${f(b[0])} ${f(Y(b[1]))}` }, s, this.arcGroup);
+      if (k === PHOTO_STEP && this.photoGroup && this.photoSrc) {
+        // the square cut this step: its bbox is just the extremes of a, b, c
+        const px0 = Math.min(a[0], b[0], c[0]), px1 = Math.max(a[0], b[0], c[0]);
+        const py0 = Math.min(a[1], b[1], c[1]), py1 = Math.max(a[1], b[1], c[1]);
+        const img = document.createElementNS(NS, 'image');
+        img.setAttribute('x', f(px0));
+        img.setAttribute('y', f(Y(py1)));
+        img.setAttribute('width', f(px1 - px0));
+        img.setAttribute('height', f(py1 - py0));
+        img.setAttribute('preserveAspectRatio', 'xMidYMid slice');
+        img.setAttribute('href', this.photoSrc);
+        this.photoGroup.appendChild(img);
+        this.photoNode = { el: img, size: s };
+        this.nodes.push(this.photoNode);
+      }
     }
     this.pole = [(x0 + x1) / 2, Y((y0 + y1) / 2)];   // where every square converges
   }
@@ -77,6 +100,11 @@ export class GoldenSpiral {
       const sw = Math.min(vw, vh) * (vw < 560 ? 0.135 : 0.081), sh = sw * RATIO;
       this.shell.style.width = sw + 'px';  this.shell.style.left = (this.ax - EYE[0] * sw) + 'px';
       this.shell.style.height = sh + 'px'; this.shell.style.top  = (this.ay - EYE[1] * sh) + 'px';
+      if (this.caption) {
+        this.caption.style.left = this.ax + 'px';
+        this.caption.style.top = (this.ay + sh * (1 - EYE[1]) + 20) + 'px';
+        this.caption.style.transform = 'translateX(-50%)';
+      }
     }
     this.renderZoom(this._lastProgress || 0);
   }
@@ -98,5 +126,11 @@ export class GoldenSpiral {
     // quarter turn counterclockwise, mirrored left-to-right; the transform origin is the
     // shell's own eye, so it stays pinned to the pole however it is turned
     this.shell.style.transform = `scale(${(0.82 + 0.18 * e).toFixed(4)}) scaleX(-1) rotate(-90deg)`;
+    if (this.caption) this.caption.style.opacity = e.toFixed(3);
+    // the profile photo gives way to the shell as it surfaces
+    if (this.photoNode) {
+      const base = parseFloat(this.photoNode.el.style.opacity) || 0;
+      this.photoNode.el.style.opacity = (base * (1 - e)).toFixed(3);
+    }
   }
 }
