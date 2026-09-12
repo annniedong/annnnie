@@ -4,6 +4,7 @@
 // shell as it arrives — driven by js/main.js's "scroll up to zoom in" gesture.
 
 const NS = 'http://www.w3.org/2000/svg';
+const XLINK = 'http://www.w3.org/1999/xlink';
 const PHI = (1 + Math.sqrt(5)) / 2;
 const UNIT = 1e3;
 const STEPS = 32;
@@ -78,6 +79,7 @@ export class GoldenSpiral {
         img.setAttribute('height', f(py1 - py0));
         img.setAttribute('preserveAspectRatio', 'xMidYMid slice');
         img.setAttribute('href', this.photoSrc);
+        img.setAttributeNS(XLINK, 'href', this.photoSrc);   // legacy Safari/older browsers need xlink:href
         this.photoGroup.appendChild(img);
         this.photoNode = { el: img, size: s };
         this.nodes.push(this.photoNode);
