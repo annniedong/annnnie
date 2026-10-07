@@ -135,6 +135,12 @@ body.zoom-locked { overflow: hidden; height: 100%; cursor: ns-resize; touch-acti
 }
 .work-intro { margin-bottom: 5rem; }
 .work-intro p:not(.work-greeting) { margin: 0 0 .4rem; color: #333; }
+.work-intro .social-links { display: flex; gap: .9rem; margin-top: .9rem; }
+.social-links a { color: #0a0a0a; display: inline-flex; padding: .15rem; }
+.social-links a:hover { color: #fff; }
+.social-links a[aria-label="LinkedIn"]:hover { background-color: #2967B0; }
+.social-links a[aria-label="GitHub"]:hover { background-color: #5D6AC0; }
+.social-links svg { width: 1.5rem; height: 1.5rem; }
 
 .work-block { margin-bottom: 4.5rem; }
 .work-block:last-child { margin-bottom: 0; }
