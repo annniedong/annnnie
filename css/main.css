@@ -191,12 +191,14 @@ body.zoom-locked { overflow: hidden; height: 100%; cursor: ns-resize; touch-acti
 .entry a.entry-title-link--anote:hover { background-color: #111827; }
 .entry a.entry-title-link--scope:hover,
 .entry a.entry-title-link--lgbtq:hover,
-.entry a.entry-title-link--commencement:hover {
+.entry a.entry-title-link--commencement:hover,
+.entry a.entry-title-link--piggy:hover {
   color: #000;
 }
 .entry a.entry-title-link--scope:hover { background-color: #9FB9CF; }
 .entry a.entry-title-link--lgbtq:hover { background-color: #DFCAF0; }
 .entry a.entry-title-link--commencement:hover { background-color: #D3F6FF; }
+.entry a.entry-title-link--piggy:hover { background-color: #F6B8C8; }
 .entry a.entry-title-link--erc:hover { background-color: #002F6C; }
 .entry p:not(.entry-meta) { margin: 0 0 .6rem; color: #333; }
 .entry p:last-child { margin-bottom: 0; }
